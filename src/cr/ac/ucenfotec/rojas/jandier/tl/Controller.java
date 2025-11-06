@@ -37,6 +37,7 @@ public class Controller {
             case 5 -> listarSaldosPorCliente();
             case 6 -> depositar();
             case 7 -> retirar();
+            case 8 -> obtenerOperaciones();
             case 0 -> interfaz.imprimirMensajeLn("Saliendo del programa...");
 
         }
@@ -137,5 +138,14 @@ public class Controller {
             interfaz.imprimirMensajeLn("Saldo de cuenta #" + cuenta.getNumCuenta() + " --> $" + cuenta.getSaldo());
         }
 
+    }
+
+    public void obtenerOperaciones() throws IOException {
+
+        interfaz.imprimirMensajeLn("Digite el numero de cuenta: ");
+        String numCuenta = interfaz.leerTexto();
+
+        String operaciones = gestorCuenta.obtenerOperacionesCuenta(numCuenta);
+        interfaz.imprimirMensajeLn(operaciones);
     }
 }

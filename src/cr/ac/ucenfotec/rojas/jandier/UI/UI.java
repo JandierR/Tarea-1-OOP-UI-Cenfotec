@@ -36,6 +36,7 @@ public class UI {
                 -5. Listar saldos de cuentas cliente
                 -6. Realizar deposito
                 -7. Realizar retiro
+                -8. Obtener operaciones
                 -0. Salir""");
         imprimirMensajeLn("-".repeat(50));
     }
