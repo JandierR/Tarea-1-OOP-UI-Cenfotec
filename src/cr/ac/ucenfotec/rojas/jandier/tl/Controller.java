@@ -75,13 +75,15 @@ public class Controller {
         interfaz.imprimirMensaje("Digite la cedula del cliente: ");
         String cedula = interfaz.leerTexto();
 
-        ArrayList<Cuenta> listaCuentas = gestorCliente.listarCuentasPorCliente(cedula);
 
-        if (listaCuentas == null || listaCuentas.isEmpty()) {
+        if (gestorCliente.listarCuentasPorCliente(cedula) == null || gestorCliente.listarCuentasPorCliente(cedula).isEmpty()) {
             interfaz.imprimirMensajeLn("No existe cliente o cliente no tiene cuentas");
             return;
         }
-        interfaz.imprimirMensajeLn(String.valueOf(listaCuentas));
+
+        for (Cuenta cuenta : gestorCliente.listarCuentasPorCliente(cedula)) {
+            interfaz.imprimirMensajeLn(cuenta.toString());
+        }
 
     }
 
